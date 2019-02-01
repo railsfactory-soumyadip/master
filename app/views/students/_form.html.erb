@@ -12,23 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :contact %>
-    <%= form.number_field :contact %>
-  </div>
-
-  <div class="field">
-    <%= form.label :student_code %>
-    <%= form.text_field :student_code %>
+    <%= form.label :subject %>
+    <%= form.text_field :subject, :value => params[:subject_name], readonly: true %>
+    <%= form.label :marks_obtained %>
+    <%= form.text_field :marks_obtained %>
   </div>
 
   <div class="actions">

@@ -7,8 +7,8 @@
     <tr>
       <th>First name</th>
       <th>Last name</th>
-      <th>Contact</th>
       <th>Student code</th>
+      <th>Marks obtained</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,10 +18,9 @@
       <tr>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
-        <td><%= student.contact %></td>
         <td><%= student.student_code %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= student.grades.find_by(subject_id: @subject.id).marks_obtained if @subject.present? && student.grades.find_by(subject_id: @subject.id).present? %></td>
+        <td><%= link_to 'Update marks', edit_student_path(student, subject_name: @subject.name) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -29,5 +28,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Student', new_student_path %>

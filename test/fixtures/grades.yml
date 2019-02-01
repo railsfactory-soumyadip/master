@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject_id: MyString
+  integer: MyString
+  teacher_id: 1
+  student_id: 1
+  marks_obtained: 1
+  grade: MyString
+
+two:
+  subject_id: MyString
+  integer: MyString
+  teacher_id: 1
+  student_id: 1
+  marks_obtained: 1
+  grade: MyString

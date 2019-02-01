@@ -14,6 +14,8 @@ gem 'activeadmin'
 gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+#rails debugger
+gem 'pry'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
