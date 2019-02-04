@@ -1,12 +1,14 @@
-ActiveAdmin.register Teacher do
+ActiveAdmin.register User do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :first_name, :last_name, :contact, :subject_id, :email, :password, :encrypted_password
+permit_params :first_name, :last_name, :contact, :subject_id, :email, :password
 
-  before_create do |teacher|
-    subject_id = Subject.find_by_name(teacher.subject_id).id
-    teacher.subject_id = subject_id if subject_id.present?
+config.filters = false
+#
+  before_create do |user|
+    subject_id = Subject.find_by_name(user.subject_id).id
+    user.subject_id = subject_id if subject_id.present?
   end
 
 index do
@@ -31,5 +33,4 @@ form do |f|
     end
     f.actions
   end
-
 end

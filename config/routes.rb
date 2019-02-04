@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'sessions/new'
   resources :teachers
   resources :students
@@ -9,4 +10,7 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new'
   post '/signin',   to: 'sessions#create'
   delete '/signin',  to: 'sessions#destroy'
+  get '/update_marks', to: 'admin/grades#update_marks', as: 'admin_update_marks'
+  get '/admin/grades', to: 'admin/grades#index', as: 'admin_grade_index'
+  get 'admin/:id/update_marks', to: 'admin/grades#update_marks', as: 'update_marks_admin'
 end
